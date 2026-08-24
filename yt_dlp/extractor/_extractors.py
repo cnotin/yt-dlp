@@ -1809,6 +1809,7 @@ from .spiegel import SpiegelIE
 from .spotify import (
     SpotifyIE,
     SpotifyShowIE,
+    SpotifyUnsupportedIE,
 )
 from .sport5 import Sport5IE
 from .sportbox import SportBoxIE

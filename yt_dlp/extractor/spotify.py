@@ -142,3 +142,22 @@ class SpotifyShowIE(SpotifyBaseIE):
             traverse_obj(show, ('name', {str})),
             clean_html(traverse_obj(show, ('description', {str}))),
         )
+
+
+class SpotifyUnsupportedIE(InfoExtractor):
+    IE_NAME = 'spotify'
+    IE_DESC = False
+    # Whitelist only the URL forms handled by SpotifyIE and SpotifyShowIE.
+    _VALID_URL = r'https?://open\.spotify\.com/(?:intl-[\w-]+/)?(?!(?:episode|show)/[0-9A-Za-z]{22}(?:[/?#]|$))(?P<type>[^/?#]+)(?:/(?P<id>[^/?#]+))?(?:[/?#]|$)'
+    _TESTS = [{
+        'url': 'https://open.spotify.com/intl-fr/track/27tQgsWuNaFswSGGvHbohM',
+        'only_matching': True,
+    }]
+
+    def _real_extract(self, url):
+        entity_type = self._match_valid_url(url).group('type')
+        raise ExtractorError(
+            'The Spotify public-passthrough extractor supports only podcast show and episode URLs. '
+            f'This is a Spotify {entity_type} URL, so it cannot be downloaded by this extractor.',
+            expected=True,
+        )
