@@ -31,7 +31,6 @@ class KnownDRMIE(UnsupportedInfoExtractor):
         r'channel(?:4|5)\.com',
         r'peacocktv\.com',
         r'(?:[\w.]+\.)?disneyplus\.com',
-        r'open\.spotify\.com',
         r'tvnz\.co\.nz',
         r'oneplus\.ch',
         r'artstation\.com/learning/courses',

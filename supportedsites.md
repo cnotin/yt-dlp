@@ -1299,6 +1299,8 @@ The only reliable way to check if a site is supported is to try it.
  - **Sport5**
  - **SportBox**: (**Currently broken**)
  - **sporteurope**
+ - **spotify:episode**: Spotify podcast episode (experimental; public passthrough only)
+ - **spotify:show**: Spotify podcast show (experimental; public passthrough only)
  - **Spreaker**
  - **SpreakerShow**
  - **SproutVideo**
